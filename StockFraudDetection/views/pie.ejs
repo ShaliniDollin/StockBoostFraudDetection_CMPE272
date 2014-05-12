@@ -1,0 +1,73 @@
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<style type="text/css">
+  body {
+  #container, #sliders {
+	min-width: 310px; 
+	max-width: 800px;
+	margin: 0 auto;
+}
+#container {
+	height: 400px; 
+}
+  }
+  </style>
+</head>
+
+<body>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script>
+	$(function () {
+	
+
+    $(document).ready(function() {
+
+    var options = {
+        chart: {
+            renderTo: 'container',
+            type: 'pie'
+        },xAxis: {
+          showFirstLabel : true,
+                    showLastLabel : true,
+                    type : "category",
+                    tickLength : 0,
+                    lineWidth : 2
+        },
+					yAxis: {
+						title: {
+							text: 'Impact'
+						},
+						plotLines: [{
+							value: 0,
+							width: 1,
+							color: '#808080'
+						}]
+					},
+        series: [{}],
+		title: {
+    text: 'Impact'
+},
+
+subtitle: {
+    text: ''
+}
+		
+    };
+var url = "http://localhost:3001/getscore?stock=<%= stock %>";
+    $.getJSON('scores.json', function(data) {
+	traffic = [];
+	$.each(data, function(i, item) {
+	
+	traffic.push([item.score,item.value]);
+	});
+		
+        options.series[0].data = traffic;
+        var chart = new Highcharts.Chart(options);
+    });
+
+});
+});
+</script>
+</body>

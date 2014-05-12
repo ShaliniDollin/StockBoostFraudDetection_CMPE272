@@ -1,0 +1,92 @@
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<style type="text/css">
+  body {
+  #container, #sliders {
+	min-width: 310px; 
+	max-width: 800px;
+	margin: 0 auto;
+}
+#container {
+	height: 400px; 
+}
+  }
+  </style>
+</head>
+
+<body>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script>
+	$(function () {
+	var symbol;
+
+    $(document).ready(function() {
+
+    var options = {
+        chart: {
+            renderTo: 'container',
+            type: 'spline'
+        },xAxis: {
+          type: 'datetime',
+        labels: {
+            formatter: function() {
+                return Highcharts.dateFormat('%d %b %y', this.value);
+            }
+        }
+        },
+					yAxis: {
+						title: {
+							text: 'Stock Value'
+						},
+						plotLines: [{
+							value: 0,
+							width: 1,
+							color: '#808080'
+						}]
+					},
+					legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+        series: [{},{},{}],
+		title: {
+    text: 'Stock Value'
+},
+
+subtitle: {
+    text: symbol
+}
+		
+    };
+	var url = "http://localhost:3001/test?arg1=<%= stock %>";
+    $.getJSON(url, function(data) {
+	close = [];
+	low = [];
+	high = [];
+	
+	$.each(data, function(i, item) {
+	symbol = item.symbol;
+	close.push([Date.parse(item.date),item.close]);
+	low.push([Date.parse(item.date),item.low]);
+	high.push([Date.parse(item.date),item.high]);
+	});
+		 
+		options.series[0].name = "Close Price"
+		options.series[1].name = "Low Price"
+		options.series[2].name = "High Price"
+        options.series[0].data = close;
+		options.series[1].data = low;
+		options.series[2].data = high;
+		
+        var chart = new Highcharts.Chart(options);
+		 chart.setTitle({ text: symbol});
+    });
+
+});
+});
+</script>
+</body>

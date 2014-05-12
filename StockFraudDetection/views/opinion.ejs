@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+<title><%= title %></title>
+
+
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+    <!-- ICON FONT CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <!-- GOOGLE FONT CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
+    <!--FANCYBOX CSS -->
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    
+    <!--BOOTSTRAP CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="css/revolutionslide.css" media="all" />
+    
+    <!-- CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <!-- MODERNIZR JS --> 
+    <script src="js/modernizr.custom.94740.js" type="text/javascript"></script>
+    
+   	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]--> 
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+
+    
+    <!-- START PRELOADER -->
+    <div class="ole">
+    
+        <section id="jSplash">
+        
+            <div id="circle"></div>
+            
+        </section>
+        
+    </div>
+    <!-- END PRELOADER -->
+   
+   <!-- START HOME -->
+   <div class="page nopad" id="home">
+    
+        <header>   
+           
+             <div class="container">
+               
+                   <div class="row">
+                                                  
+                       <div class="span12">
+                           
+                           <div class="logo">  
+                            <a class="brand" href="#">STOCK FRAUD ANALYZER</a><br />
+                            <span class="slogan">Your Advisor :)</span>
+                         </div>
+                     
+                        </div> <!-- end span12 -->
+            
+                  </div> <!-- end row -->
+              
+             </div> <!-- end container -->
+       
+       </header>  <!-- end header -->
+     
+       <div class="top-nav"> 
+       
+         <div class="container">
+         
+            <div class="row">
+         
+               <div class="span12">
+                  
+                  <nav id="nav-button">
+                    <div id="menu-button">
+                       <div id="menu-button-inner"><i class=" icon-align-justify"></i>Menu</div>
+                    </div>
+                   </nav> 
+                   
+                   <div class="menu-wrap">
+                    
+                     <nav id="menu">
+                                                  
+                          <ul id="navigation">
+                          
+                            
+                           <li>
+                              <a href="#home" class="active firstCh">
+                                <span>Home</span>
+                                <i class="icon-home icon-2x"></i>
+                              </a>
+                            </li>
+                             <li>
+                              <a href="/check" class="secondCh">
+                                <span>Check Your Stock</span>
+                                <i class="icon-envelop icon-2x"></i>
+                              </a>
+                            </li>
+                          
+                            <li>
+                              <a href="/stock">
+                                <span>STOCKS</span>
+                                <i class="icon-globe  icon-2x"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#about" class="lastCh">
+                                <span>WHY US ?</span>
+                                <i class="icon-group icon-2x"></i>
+                              </a>
+                            </li>  
+                          </ul>
+                          
+                    </nav> <!-- end menu -->
+                  
+                  </div>   <!-- end menu-wrap -->
+                  
+               </div> <!-- end span12 -->
+             
+             </div>  <!-- end row -->
+             
+           </div>  <!-- end container -->
+     
+       </div>   <!-- end top-nav -->
+       
+      
+    
+    </div>  
+    <!-- END HOME -->
+     
+    <!-- START ABOUT -->
+    <div class="page" id="about">
+        
+      <div class="about-wrap">
+        
+        <div class="container">
+    
+            
+            <div class="row">
+                
+               <div class="span12">
+                 
+                 <!-- START TAB WRAP -->   
+                 <div class="tabWrap"> 
+                     
+                    <h4>Our Services</h4>
+                       
+                        <ul class="tabs">
+                          <li>
+                             <a href="http://localhost:3000/getopinion?stock=<%= stock %>">
+                              <i class=" icon-medkit icon-2x"></i> 
+                               People Opinion</a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:3000/graphhome?stock=<%= stock %>">
+                              <i class="icon-lightbulb icon-2x"></i> 
+                               Stock Price </a>
+                            </li>
+                            
+                            <li>
+                            <a href="http://localhost:3000/vcall?stock=<%= stock %>">
+                              <i class="icon-lightbulb icon-2x"></i> 
+                               Stock Volume </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:3000/scorecall?stock=<%= stock %>">
+                              <i class="icon-cogs icon-2x"></i> 
+                               Scores  </a>
+                            </li>
+                            <li>
+                             <a href="http://localhost:3000/getopinion?stock=<%= stock %>">
+                              <i class=" icon-medkit icon-2x"></i> 
+                               People Opinion</a>
+                            </li>
+                    
+                    
+                        </ul>  <!-- end tabs -->
+                        
+                        
+                        <div class="tab_container">
+                        
+                          
+                            <div id="tab1" class="tab_content">
+                                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<style type="text/css">
+  body {
+  #container, #sliders {
+	min-width: 310px; 
+	max-width: 800px;
+	margin: 0 auto;
+}
+#container {
+	height: 400px; 
+}
+  }
+  </style>
+
+
+<body>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                              <script>
+
+$(function () {
+
+	
+
+    $(document).ready(function() {
+
+    var options = {
+        chart: {
+            renderTo: 'container',
+            type: 'column'
+        },xAxis: {
+          showFirstLabel : true,
+                    showLastLabel : true,
+                    type : "category",
+                    tickLength : 0,
+                    lineWidth : 2
+        },
+					yAxis: {
+						title: {
+							 text: 'People Opinion'
+						},
+						plotLines: [{
+							value: 0,
+							width: 1,
+							color: '#808080'
+						}]
+					},
+        series: [{}],
+		title: {
+    text: 'People Opinion'
+},
+
+subtitle: {
+    text: ''
+}
+		
+    };
+
+
+	var url = "http://localhost:3000/opinion?stock=<%= stock %>";
+    $.getJSON(url, function(data) {
+	traffic = [];
+	$.each(data, function(i, item) {
+
+	traffic.push([item.Name,item.Total]);
+	});
+		
+        options.series[0].data = traffic;
+        var chart = new Highcharts.Chart(options);
+    });
+
+
+});
+});
+</script>
+</body>
+                            </div>
+                              <div id="tab2" class="tab_content">
+                            <h2>G2<h2>
+                                 </div>  
+                            <div id="tab3" class="tab_content">
+                            <h2>G3<h2>
+                                 </div> 
+                           <div id="tab4" class="tab_content">
+                            <h2>G4<h2>
+                                 </div> 
+                            
+                        </div> <!-- end tab_container -->
+                  
+                    </div> <!-- end tabWrap -->
+              
+                 </div> <!-- end span12 -->
+                 
+               </div>   <!-- end row -->
+               
+ 
+              
+          </div> <!-- end container -->
+            
+        </div> <!-- end div about-wrap --> 
+          
+    </div> 
+    <!-- END ABOUT -->
+    
+   
+     
+     <!-- START FOOTER -->  
+     <footer>
+     
+       <div class="container">
+         
+         <div class="row">
+           
+           <div class="span12">
+           
+            <h1 class="footer-header">Stock Fraud Analyzer</h1>
+            
+            
+             
+             <div class="copyright">
+               
+               <p>Copyright © 2014</p>
+                                          
+             </div> <!-- end copyright -->
+           
+           </div> <!-- end span12 -->
+          
+         </div> <!-- end row -->
+       
+       </div> <!-- end container -->
+     
+     </footer>
+     <!-- END FOOTER -->
+
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>       
+        <script src="js/jquery.stapel.js" type="text/javascript"></script> 
+        <script src="js/jquerypp.custom.js" type="text/javascript"></script>
+        <script src="js/jquery.cbpFWSlider.js" type="text/javascript"></script>
+        <script src="js/jquery.fancybox.pack.js" type="text/javascript"></script> 
+        <script src="js/jquery.fancybox-media.js" type="text/javascript"></script>     
+        <script src="js/jquery.vaccordion.js" type="text/javascript"></script>
+        <script src="js/jquery.cbpQTRotator.js" type="text/javascript"></script>
+        <script src="js/waypoints.min.js" type="text/javascript"></script>
+        <script src="js/jquery.sticky.js" type="text/javascript"></script>
+        <script src="js/owl.carousel.js" type="text/javascript"></script>
+        <script src="js/preloader.js" type="text/javascript"></script>
+        
+        <!-- jQuery Revolution Slider  -->
+        <script src="js/jquery.themepunch.plugins.min.js" type="text/javascript"></script>
+        <script src="js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+        <script src="js/revolution.slider.call.js" type="text/javascript"></script> 
+        
+        <script src="js/custom.js" type="text/javascript"></script> 
+         
+
+
+</body>
+</html>
