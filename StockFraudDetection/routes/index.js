@@ -5,6 +5,7 @@ var sentimental = require('Sentimental');
 var async = require('async');
 var finance= require('yahoo-finance');
 var ejs = require('ejs');
+var moment = require('moment');
 
 var fs = require('fs');
 
@@ -74,11 +75,12 @@ exports.check = function(req, res){
 
 
 exports.price = function(req,res){
+	var now = moment(new Date());
 	console.log("In price" + req.param("stock"));
 	finance.historical({
 		symbol: req.param("stock"),
 		from: '2014-04-28',
-		to: '2014-05-11'
+		to: now.format("YYYY-MM-D")
 	}, function (err, quotes, url, symbol) {
 		//console.log(JSON.stringify(quotes));
 		res.send( JSON.stringify(quotes));
@@ -86,11 +88,12 @@ exports.price = function(req,res){
 
 };
 exports.volume = function(req,res){
+	var now = moment(new Date());
 	console.log("In price" + req.param("stock"));
 	finance.historical({
 		symbol: req.param("stock"),
 		from: '2014-04-28',
-		to: '2014-05-11'
+		to: now.format("YYYY-MM-D")
 	}, function (err, quotes, url, symbol) {
 		//console.log(JSON.stringify(quotes));
 		res.send( JSON.stringify(quotes));
